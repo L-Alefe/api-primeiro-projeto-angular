@@ -46,7 +46,8 @@ app.get('/', (req, res) => {
 app.post('/', (req, res) => {
   var results = [];
   var sql = "insert into categoria (descricao) values ('" + req.body.descricao + "')";
-  pool.query(sql, err => {});
+  pool.query(sql, err => { });
+  executeSelect();
   res.json(req.body);
 });
 
